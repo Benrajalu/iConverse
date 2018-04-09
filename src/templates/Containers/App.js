@@ -6,10 +6,7 @@ class App extends Component {
     super(props);
     this.state = {
       chatLog: [],
-      activity: {
-        userA: false,
-        userB: false
-      }
+      activity: []
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,8 +22,27 @@ class App extends Component {
   }
 
   handleType(data) {
-    const currentActivity = this.state.activity;
-    currentActivity[data.user] = data.status;
+    let currentActivity = this.state.activity;
+    currentActivity.indexOf(data);
+    switch (data.action) {
+      case 'add':
+        // check if the username is already on the list, if so don't add
+        if (currentActivity.indexOf(data.user) === -1) {
+          currentActivity.push(data.user);
+        }
+        break;
+
+      case 'remove':
+        // check if the username is NOT on the list, if so don't remove, duh
+        if (currentActivity.indexOf(data.user) !== -1) {
+          currentActivity.splice(currentActivity.indexOf(data.user), 1);
+        }
+        break;
+
+      default:
+        currentActivity = currentActivity;
+    }
+
     this.setState({
       activity: currentActivity
     });

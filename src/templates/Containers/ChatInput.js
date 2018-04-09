@@ -28,7 +28,7 @@ class ChatInput extends Component {
       });
       this.props.handleType({
         user: this.props.user,
-        status: false
+        action: 'remove'
       });
 
       return true;
@@ -57,7 +57,7 @@ class ChatInput extends Component {
         // We'll use this to display a "UserB is typing" message in the relevant window
         const statusUpdate = {
           user: this.props.user,
-          status: this.state.value.length > 0
+          action: this.state.value.length > 0 ? 'add' : 'remove'
         };
         this.props.handleType(statusUpdate);
       }
