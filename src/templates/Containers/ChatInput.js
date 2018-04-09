@@ -17,7 +17,7 @@ class ChatInput extends Component {
     if (this.state.value.length > 0) {
       const chatObject = {
         user: this.props.user,
-        content: this.state.value,
+        content: <p>{this.state.value}</p>,
         timestamp: Date.now()
       };
       this.props.handleSubmit(chatObject);
@@ -73,6 +73,7 @@ class ChatInput extends Component {
           type="text"
           onChange={this.handleChange}
           ref={element => (this.input = element)}
+          value={this.state.value}
         />
         <button type="submit">OK</button>
       </form>

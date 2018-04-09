@@ -7,21 +7,19 @@ class ChatLog extends Component {
   render() {
     // Checking activity prop for values that are not equal to the current user
     // then using this to display or hide the activity message
-    const currentlyActive = this.props.activity
-      ? this.props.activity.filter(value => value !== this.props.user)
-      : [];
+    const currentlyActive = this.props.activity.filter(
+      value => value !== this.props.user
+    );
 
     // Looping on the log props to display the messages using a presentational component.
     // Will aslo use a ref to scroll that component into view
-    const messages = this.props.log
-      ? this.props.log.map((item, index) => (
-          <LogEntry
-            value={item}
-            originalAuthor={item.user === this.props.user}
-            key={`log-${index}`}
-          />
-        ))
-      : [];
+    const messages = this.props.log.map((item, index) => (
+      <LogEntry
+        value={item}
+        originalAuthor={item.user === this.props.user}
+        key={`log-${index}`}
+      />
+    ));
 
     return (
       <div className="chatLog">

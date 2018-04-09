@@ -15,7 +15,9 @@ class App extends Component {
 
   handleSubmit(value) {
     const currentLog = this.state.chatLog;
+
     currentLog.push(value);
+
     this.setState({
       chatLog: currentLog
     });
