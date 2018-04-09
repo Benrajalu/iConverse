@@ -40,7 +40,7 @@ class App extends Component {
         break;
 
       default:
-        currentActivity = currentActivity;
+        return false;
     }
 
     this.setState({

@@ -46,7 +46,6 @@ class ChatInput extends Component {
   }
 
   handleChange(event) {
-    console.log('yep');
     // Handle the user's typing in the field
     this.setState(
       {
