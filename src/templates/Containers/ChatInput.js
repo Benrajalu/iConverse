@@ -48,17 +48,20 @@ class ChatInput extends Component {
   handleChange(event) {
     console.log('yep');
     // Handle the user's typing in the field
-    this.setState({
-      value: event.target.value
-    });
-
-    // When the user types, the component used the handleType prop to update the activity monitor
-    // We'll use this to display a "UserB is typing" message in the relevant window
-    const statusUpdate = {
-      user: this.props.user,
-      status: this.state.value.length > 0
-    };
-    this.props.handleType(statusUpdate);
+    this.setState(
+      {
+        value: event.target.value
+      },
+      () => {
+        // When the user types, the component used the handleType prop to update the activity monitor
+        // We'll use this to display a "UserB is typing" message in the relevant window
+        const statusUpdate = {
+          user: this.props.user,
+          status: this.state.value.length > 0
+        };
+        this.props.handleType(statusUpdate);
+      }
+    );
   }
 
   render() {
