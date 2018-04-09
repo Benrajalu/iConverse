@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class LogEntry extends Component {
   render() {
@@ -20,5 +21,10 @@ class LogEntry extends Component {
     );
   }
 }
+
+LogEntry.propTypes = {
+  value: PropTypes.object.isRequired,
+  originalAuthor: PropTypes.bool.isRequired
+};
 
 export default LogEntry;

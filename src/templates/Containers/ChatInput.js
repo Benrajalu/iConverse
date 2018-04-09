@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class ChatInput extends Component {
   constructor(props) {
@@ -78,5 +79,11 @@ class ChatInput extends Component {
     );
   }
 }
+
+ChatInput.propTypes = {
+  user: PropTypes.string.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  handleType: PropTypes.func.isRequired
+};
 
 export default ChatInput;

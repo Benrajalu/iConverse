@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import ChatLog from '../Containers/ChatLog';
 import ChatInput from '../Containers/ChatInput';
 
@@ -20,5 +22,13 @@ class ChatWindow extends Component {
     );
   }
 }
+
+ChatWindow.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  handleType: PropTypes.func.isRequired,
+  log: PropTypes.array.isRequired,
+  user: PropTypes.string.isRequired,
+  activity: PropTypes.array.isRequired
+};
 
 export default ChatWindow;

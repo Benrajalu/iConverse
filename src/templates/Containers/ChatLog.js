@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import LogEntry from '../Presentation/LogEntry';
 
 class ChatLog extends Component {
@@ -36,5 +38,11 @@ class ChatLog extends Component {
     );
   }
 }
+
+ChatLog.propTypes = {
+  user: PropTypes.string.isRequired,
+  log: PropTypes.array.isRequired,
+  activity: PropTypes.array.isRequired
+};
 
 export default ChatLog;
