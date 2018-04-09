@@ -4,6 +4,16 @@ import PropTypes from 'prop-types';
 import LogEntry from '../Presentation/LogEntry';
 
 class ChatLog extends Component {
+  logRef = React.createRef();
+
+  shouldComponentUpdate(nextProps) {
+    return nextProps.log !== this.props.log;
+  }
+
+  componentDidUpdate() {
+    this.logRef.current.scrollTop = this.logRef.current.scrollHeight;
+  }
+
   render() {
     // Looping on the log props to display the messages using a presentational component.
     // Will aslo use a ref to scroll that component into view
@@ -15,7 +25,11 @@ class ChatLog extends Component {
       />
     ));
 
-    return <div className="window_log">{messages}</div>;
+    return (
+      <div className="window_log" ref={this.logRef}>
+        {messages}
+      </div>
+    );
   }
 }
 
