@@ -8,7 +8,7 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <LogEntry
-      value={{ user: 'test', content: 'testing', timestamp: Date.now() }}
+      value={{ user: 'test', content: ['testing'], timestamp: Date.now() }}
       originalAuthor={true}
     />,
     div
@@ -19,7 +19,7 @@ it('renders without crashing', () => {
 describe('The LogEntry component...', () => {
   const logEntry = mount(
     <LogEntry
-      value={{ user: 'test', content: 'testing', timestamp: Date.now() }}
+      value={{ user: 'test', content: ['testing'], timestamp: Date.now() }}
       originalAuthor={false}
     />
   );

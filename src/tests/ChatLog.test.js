@@ -18,12 +18,12 @@ describe('The ChatLog component...', () => {
       log: [
         {
           user: 'userA',
-          content: 'Lorem ipsum dolor sit amet',
+          content: ['Lorem ipsum dolor sit amet'],
           timestamp: Date.now()
         },
         {
           user: 'userB',
-          content: 'Lorem ipsum dolor sit amet',
+          content: ['Lorem ipsum dolor sit amet'],
           timestamp: Date.now() + 2
         }
       ]

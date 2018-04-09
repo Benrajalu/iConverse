@@ -17,7 +17,7 @@ class ChatInput extends Component {
     if (this.state.value.length > 0) {
       const chatObject = {
         user: this.props.user,
-        content: <p>{this.state.value}</p>,
+        content: this.state.value,
         timestamp: Date.now()
       };
       this.props.handleSubmit(chatObject);
