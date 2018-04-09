@@ -6,12 +6,12 @@ import { mount } from 'enzyme';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<ChatLog log={[]} user="test" activity={[]} />, div);
+  ReactDOM.render(<ChatLog log={[]} user="test" />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
 describe('The ChatLog component...', () => {
-  const log = mount(<ChatLog log={[]} user="test" activity={[]} />);
+  const log = mount(<ChatLog log={[]} user="test" />);
 
   test('...displays all given messages', () => {
     log.setProps({

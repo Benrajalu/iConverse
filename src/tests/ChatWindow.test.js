@@ -43,13 +43,13 @@ describe('The chat window...', () => {
     windowItem.setProps({
       activity: ['userA']
     });
-    expect(windowItem.find('.activityZone p').length).toBe(0);
+    expect(windowItem.find('.activity p').length).toBe(0);
   });
 
   test('...DOES display activity when other users are typing', () => {
     windowItem.setProps({
       activity: ['userB', 'userC']
     });
-    expect(windowItem.find('.activityZone p').length).toBe(1);
+    expect(windowItem.find('.activity p').length).toBe(1);
   });
 });

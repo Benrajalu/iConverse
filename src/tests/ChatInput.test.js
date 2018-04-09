@@ -7,7 +7,12 @@ import { mount } from 'enzyme';
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
-    <ChatInput user="test" handleSubmit={() => true} handleType={() => true} />,
+    <ChatInput
+      user="test"
+      handleSubmit={() => true}
+      handleType={() => true}
+      activity={[]}
+    />,
     div
   );
   ReactDOM.unmountComponentAtNode(div);
@@ -15,7 +20,12 @@ it('renders without crashing', () => {
 
 describe('The input component...', () => {
   const input = mount(
-    <ChatInput user="test" handleSubmit={() => true} handleType={() => true} />
+    <ChatInput
+      user="test"
+      handleSubmit={() => true}
+      handleType={() => true}
+      activity={[]}
+    />
   );
 
   test('...is fine when submitting some content', () => {

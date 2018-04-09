@@ -65,9 +65,15 @@ class ChatInput extends Component {
   }
 
   render() {
+    // Checking activity prop for values that are not equal to the current user
+    // then using this to display or hide the activity message
+    const currentlyActive = this.props.activity.filter(
+      value => value !== this.props.user
+    );
+
     return (
       <form
-        className={this.state.error ? 'chatInput error' : 'chatInput'}
+        className={this.state.error ? 'window_input error' : 'window_input'}
         onSubmit={this.handleSubmit}>
         <input
           type="text"
@@ -76,6 +82,14 @@ class ChatInput extends Component {
           value={this.state.value}
         />
         <button type="submit">OK</button>
+        <div className="activity">
+          {currentlyActive.length > 0 ? (
+            <p>
+              {currentlyActive.map(name => name)}{' '}
+              {currentlyActive.length > 1 ? 'sont' : 'est'} en train d'écrire...
+            </p>
+          ) : null}
+        </div>
       </form>
     );
   }
@@ -84,7 +98,8 @@ class ChatInput extends Component {
 ChatInput.propTypes = {
   user: PropTypes.string.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  handleType: PropTypes.func.isRequired
+  handleType: PropTypes.func.isRequired,
+  activity: PropTypes.array.isRequired
 };
 
 export default ChatInput;

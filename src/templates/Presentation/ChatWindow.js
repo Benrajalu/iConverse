@@ -7,17 +7,17 @@ import ChatInput from '../Containers/ChatInput';
 class ChatWindow extends Component {
   render() {
     return (
-      <div className="chatWindow">
-        <ChatLog
-          log={this.props.log}
-          user={this.props.user}
-          activity={this.props.activity}
-        />
-        <ChatInput
-          user={this.props.user}
-          handleSubmit={this.props.handleSubmit}
-          handleType={this.props.handleType}
-        />
+      <div className="window">
+        <div className="window_title">{this.props.user}</div>
+        <div className="window_content">
+          <ChatLog log={this.props.log} user={this.props.user} />
+          <ChatInput
+            user={this.props.user}
+            handleSubmit={this.props.handleSubmit}
+            handleType={this.props.handleType}
+            activity={this.props.activity}
+          />
+        </div>
       </div>
     );
   }

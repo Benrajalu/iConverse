@@ -4,3 +4,54 @@ body,
 html {
   background: #c2bba1;
 }
+
+#windowWrap {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  .window {
+    margin: 0 10px;
+    width: 50%;
+    max-width: 350px;
+    background: #a7a18d;
+    height: 100vh;
+    max-height: 200px;
+    display: flex;
+    flex-flow: column;
+    &_title {
+      background: #504d46;
+      padding: 5px 10px;
+      color: #c2bba1;
+      text-transform: uppercase;
+    }
+    &_content {
+      flex-grow: 2;
+      display: flex;
+      flex-flow: column;
+    }
+    &_log {
+      flex-grow: 2;
+      position: relative;
+      overflow: auto;
+    }
+    &_input {
+      min-height: 60px;
+      border-top: 1px solid #504d46;
+      padding: 5px;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      input {
+        flex-grow: 2;
+      }
+      .activity {
+        width: 100%;
+        line-height: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

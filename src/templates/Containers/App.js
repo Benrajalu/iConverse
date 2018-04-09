@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   handleSubmit(value) {
-    const currentLog = this.state.chatLog;
+    const currentLog = Array.from(this.state.chatLog);
 
     // Build the archetypal new value object
     // Make it a let because it's likely to be swapped for a reash of the previous entry
@@ -50,7 +50,7 @@ class App extends Component {
   }
 
   handleType(data) {
-    let currentActivity = this.state.activity;
+    let currentActivity = Array.from(this.state.activity);
     currentActivity.indexOf(data);
     switch (data.action) {
       case 'add':
