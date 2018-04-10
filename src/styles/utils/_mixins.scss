@@ -1,6 +1,34 @@
-$tan: #f2e8e2;
-$white: #fffefa;
+$black: #546070;
 $blue: #7cacb0;
 $accent: $blue;
 $grey: #cecece;
-$black: #546070;
+$tan: #f2e8e2;
+$white: #fffefa;
+
+@import '../fonts/gotham-rounded-bold';
+@import '../fonts/gotham-rounded-book';
+
+@mixin gotham($size, $weight, $color) {
+  font-family: 'gotham-rounded';
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@keyframes errorShake {
+  0% {
+    transform: translateX(-15%);
+  }
+  25% {
+    transform: translateX(-0%);
+  }
+  50% {
+    transform: translateX(15%);
+  }
+  75% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-15%);
+  }
+}

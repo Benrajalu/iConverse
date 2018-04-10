@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'gotham-rounded';
+  font-weight: bold;
+  src: url('./fonts/gotham-rounded-bold/gotham-rounded-bold.eot');
+  src: url('./fonts/gotham-rounded-bold/gotham-rounded-bold.eot?#iefix')
+      format('embedded-opentype'),
+    url('./fonts/gotham-rounded-bold/gotham-rounded-bold.woff') format('woff'),
+    url('./fonts/gotham-rounded-bold/gotham-rounded-bold.ttf')
+      format('truetype'),
+    url('./fonts/gotham-rounded-bold/gotham-rounded-bold.svg#svgFontName')
+      format('svg');
+}

@@ -2,20 +2,53 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
-  padding: 8px 8px 4px;
+  padding: 0px 8px;
   min-height: 50px;
   background: #f2f1ed;
   input {
     flex-grow: 2;
+    border: 0px;
+    line-height: 32px;
+    padding: 0px;
+    background: transparent;
+    @include gotham(1.2rem, normal, $black);
+    transition: all 200ms ease-out;
+    caret-color: $blue;
+    &::placeholder {
+      color: $grey;
+    }
+    &:focus {
+      outline: 0;
+      + button {
+        padding-right: 5px;
+      }
+    }
+  }
+  button {
+    transition: all 200ms ease-out;
+    background: transparent;
+    border: 0px;
+    line-height: 32px;
+    padding-left: 10px;
+    padding-right: 0px;
+    @include gotham(1.1rem, bold, $blue);
+    text-transform: uppercase;
+    &:focus {
+      outline: 0;
+    }
   }
   .activity {
     width: 100%;
     min-height: 18px;
-    p {
-      font-size: 12px;
-      line-height: 1.5;
+    @include gotham(1rem, normal, $black);
+  }
+
+  &.error {
+    button {
+      color: #c1242e;
+      animation: 200ms errorShake infinite alternate;
     }
   }
 }

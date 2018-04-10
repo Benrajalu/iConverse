@@ -80,8 +80,9 @@ class ChatInput extends Component {
           onChange={this.handleChange}
           ref={element => (this.input = element)}
           value={this.state.value}
+          placeholder="Envoyez un message..."
         />
-        <button type="submit">OK</button>
+        <button type="submit">Envoyer</button>
         <div className="activity">
           {currentlyActive.length > 0 ? (
             <p>
