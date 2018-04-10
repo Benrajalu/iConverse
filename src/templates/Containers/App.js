@@ -114,6 +114,7 @@ class App extends Component {
             user={user}
             activity={this.state.activity}
             isActive={index === this.state.activeWindow}
+            index={index}
           />
         ))}
       </div>

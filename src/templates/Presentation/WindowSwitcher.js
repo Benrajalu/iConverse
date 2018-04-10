@@ -30,7 +30,8 @@ class WindowSwitcher extends Component {
 
 WindowSwitcher.propTypes = {
   handleActiveWindow: PropTypes.func.isRequired,
-  users: PropTypes.array.isRequired
+  users: PropTypes.array.isRequired,
+  active: PropTypes.number.isRequired
 };
 
 export default WindowSwitcher;

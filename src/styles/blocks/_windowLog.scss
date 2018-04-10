@@ -6,6 +6,15 @@
   display: flex;
   flex-flow: column;
   padding: 16px;
+  position: relative;
+  &:after {
+    // Firefox doesn't understand nested margins inside a scrolling flexbox parent
+    // This little helper is here to help pad the bottom out !
+    content: '';
+    display: block;
+    width: 100%;
+    padding: 4px;
+  }
   .log_entry {
     position: relative;
     padding: 16px;
@@ -15,6 +24,9 @@
     border-radius: 4px;
     color: $black;
     transition: all 200ms ease-out;
+    &:last-child {
+      margin-bottom: 0px;
+    }
     &.authored {
       align-self: flex-end;
       background: $blue;

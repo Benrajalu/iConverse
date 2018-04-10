@@ -3,8 +3,18 @@
 
 body,
 html {
-  background: $tan;
+  /* Tempted, but no */
+  /*background-image: url('https://assets.foxdcg.com/dpp-uploaded/images/brooklyn-nine-nine/brooklyn-nine-nine_05/keyart-tab-lan.jpg');
+  background-size: cover;*/
   font-size: 62.5%;
+  background: linear-gradient(
+    to bottom,
+    #f0ffff 25%,
+    #c7f0f8 32%,
+    #d9eff8 60%,
+    #c3f9ff 80%,
+    #dbeff9 100%
+  );
 }
 
 @import 'styles/blocks/windowsWrap';
