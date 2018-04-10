@@ -32,3 +32,29 @@ $white: #fffefa;
     transform: translateX(-15%);
   }
 }
+
+@keyframes flip {
+  0% {
+    transform: translateX(-8%) translateY(-47%) scale(0.9) skewX(0deg)
+      skewY(0deg) rotateY(0deg);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateX(90%) translateY(-65%) skewX(10deg) skewY(-15deg)
+      rotateY(90deg) scale(1);
+    z-index: 4;
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(80%) translateY(-65%) skewX(0deg) skewY(0deg)
+      rotateY(45deg) scale(1);
+    opacity: 1;
+    z-index: 4;
+  }
+  100% {
+    transform: translateX(0%) translateY(-50%) skewX(0deg) skewY(0deg)
+      rotateY(0deg) scale(1);
+    z-index: 4;
+    opacity: 1;
+  }
+}

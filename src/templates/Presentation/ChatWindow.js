@@ -7,7 +7,7 @@ import ChatInput from '../Containers/ChatInput';
 class ChatWindow extends Component {
   render() {
     return (
-      <div className="window">
+      <div className={`window ${this.props.isActive ? 'active' : ''}`}>
         <div className="window_title">{this.props.user}</div>
         <div className="window_content">
           <ChatLog log={this.props.log} user={this.props.user} />

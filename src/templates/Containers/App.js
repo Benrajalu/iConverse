@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ChatWindow from '../Presentation/ChatWindow';
+import WindowSwitcher from '../Presentation/WindowSwitcher';
 
 import moment from 'moment';
 
@@ -8,11 +9,13 @@ class App extends Component {
     super(props);
     this.state = {
       chatLog: [],
-      activity: []
+      activity: [],
+      activeWindow: 0
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleType = this.handleType.bind(this);
+    this.handleActiveWindow = this.handleActiveWindow.bind(this);
   }
 
   handleSubmit(value) {
@@ -76,10 +79,32 @@ class App extends Component {
     });
   }
 
+  handleActiveWindow(direction, users) {
+    if (direction === 'next') {
+      this.setState({
+        activeWindow:
+          this.state.activeWindow < users.length - 1
+            ? this.state.activeWindow + 1
+            : this.state.activeWindow
+      });
+      return true;
+    }
+    this.setState({
+      activeWindow:
+        this.state.activeWindow > 0 ? this.state.activeWindow - 1 : 0
+    });
+  }
+
   render() {
     const users = ['Jacob Peralta', 'Amy Santiago'];
     return (
       <div id="windows-wrap">
+        <WindowSwitcher
+          users={users}
+          handleActiveWindow={this.handleActiveWindow}
+          active={this.state.activeWindow}
+        />
+
         {users.map((user, index) => (
           <ChatWindow
             key={`window-${index}`}
@@ -88,6 +113,7 @@ class App extends Component {
             log={this.state.chatLog}
             user={user}
             activity={this.state.activity}
+            isActive={index === this.state.activeWindow}
           />
         ))}
       </div>
