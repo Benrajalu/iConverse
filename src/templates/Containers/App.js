@@ -77,22 +77,19 @@ class App extends Component {
   }
 
   render() {
+    const users = ['Jacob Peralta', 'Amy Santiago'];
     return (
-      <div id="windowWrap">
-        <ChatWindow
-          handleSubmit={this.handleSubmit}
-          handleType={this.handleType}
-          log={this.state.chatLog}
-          user="userA"
-          activity={this.state.activity}
-        />
-        <ChatWindow
-          handleSubmit={this.handleSubmit}
-          handleType={this.handleType}
-          log={this.state.chatLog}
-          user="userB"
-          activity={this.state.activity}
-        />
+      <div id="windows-wrap">
+        {users.map((user, index) => (
+          <ChatWindow
+            key={`window-${index}`}
+            handleSubmit={this.handleSubmit}
+            handleType={this.handleType}
+            log={this.state.chatLog}
+            user={user}
+            activity={this.state.activity}
+          />
+        ))}
       </div>
     );
   }
