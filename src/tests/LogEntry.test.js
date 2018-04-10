@@ -25,13 +25,13 @@ describe('The LogEntry component...', () => {
   );
 
   test("...doesn't have the active class when the author is not the expcted one", () => {
-    expect(logEntry.find('.logEntry.authored').length).toBe(0);
+    expect(logEntry.find('.log_entry.authored').length).toBe(0);
   });
 
   test('...but add the authored class to the relevant chat item', () => {
     logEntry.setProps({
       originalAuthor: true
     });
-    expect(logEntry.find('.logEntry.authored').length).toBe(1);
+    expect(logEntry.find('.log_entry.authored').length).toBe(1);
   });
 });

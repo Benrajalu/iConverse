@@ -28,6 +28,6 @@ describe('The ChatLog component...', () => {
         }
       ]
     });
-    expect(log.find('.logEntry').length).toBe(2);
+    expect(log.find('.log_entry').length).toBe(2);
   });
 });
