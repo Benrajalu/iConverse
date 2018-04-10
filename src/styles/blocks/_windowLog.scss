@@ -1,6 +1,7 @@
 .window_log {
   flex-grow: 2;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
   width: 100%;
   display: flex;
   flex-flow: column;
@@ -53,6 +54,16 @@
         margin-bottom: 4px;
         &:last-child {
           margin-bottom: 0px;
+        }
+      }
+    }
+
+    @media (max-width: 400px) {
+      .authorship {
+        flex-flow: column;
+        align-items: flex-start;
+        .author {
+          margin-bottom: 2px;
         }
       }
     }

@@ -10,8 +10,9 @@
     box-shadow: 0px 2px 6px rgba(30, 30, 30, 0.1);
     position: relative;
     z-index: 2;
-    @include gotham(1.5rem, bold, $white);
+    @include gotham(1.5rem, normal, $white);
     text-transform: uppercase;
+    text-align: center;
   }
   &_content {
     display: flex;
