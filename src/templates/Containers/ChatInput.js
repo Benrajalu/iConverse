@@ -85,8 +85,10 @@ class ChatInput extends Component {
         <div className="activity">
           {currentlyActive.length > 0 ? (
             <p>
-              {currentlyActive.map(name => name)}{' '}
-              {currentlyActive.length > 1 ? 'sont' : 'est'} en train d'écrire...
+              {currentlyActive.length > 1
+                ? 'Plusieurs utilisateurs sont'
+                : currentlyActive.map(name => `${name} est`)}{' '}
+              en train d'écrire...
             </p>
           ) : null}
         </div>
