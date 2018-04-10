@@ -1,6 +1,14 @@
 {
-  "main.css": "static/css/main.710d8944.css",
-  "main.css.map": "static/css/main.710d8944.css.map",
+  "main.css": "static/css/main.4c13e0dd.css",
+  "main.css.map": "static/css/main.4c13e0dd.css.map",
   "main.js": "static/js/main.0cc6e826.js",
-  "main.js.map": "static/js/main.0cc6e826.js.map"
+  "main.js.map": "static/js/main.0cc6e826.js.map",
+  "static/media/gotham-rounded-bold.eot": "static/media/gotham-rounded-bold.237951d2.eot",
+  "static/media/gotham-rounded-bold.svg": "static/media/gotham-rounded-bold.a17abd06.svg",
+  "static/media/gotham-rounded-bold.ttf": "static/media/gotham-rounded-bold.70961312.ttf",
+  "static/media/gotham-rounded-bold.woff": "static/media/gotham-rounded-bold.5c291475.woff",
+  "static/media/gotham-rounded-book.eot": "static/media/gotham-rounded-book.a9b602c1.eot",
+  "static/media/gotham-rounded-book.svg": "static/media/gotham-rounded-book.e40570a3.svg",
+  "static/media/gotham-rounded-book.ttf": "static/media/gotham-rounded-book.f9346473.ttf",
+  "static/media/gotham-rounded-book.woff": "static/media/gotham-rounded-book.745bf449.woff"
 }
