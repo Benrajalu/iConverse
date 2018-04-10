@@ -1,0 +1,62 @@
+.window_log {
+  flex-grow: 2;
+  overflow: scroll;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  padding: 16px;
+  .log_entry {
+    position: relative;
+    padding: 16px;
+    width: 80%;
+    background: #eff1ee;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    color: $black;
+    transition: all 200ms ease-out;
+    &.authored {
+      align-self: flex-end;
+      background: $blue;
+      color: #fff;
+    }
+    .authorship {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      position: relative;
+      .timestamp {
+        color: $grey;
+        font-size: 1.1rem;
+      }
+      .author {
+        color: inherit;
+        font-size: 1.6rem;
+        &:before {
+          width: 6px;
+          height: 6px;
+          content: '';
+          border-radius: 100%;
+          background: $blue;
+          position: absolute;
+          left: -11px;
+          top: 50%;
+          transform: translateY(-50%);
+          display: none;
+        }
+      }
+    }
+
+    .content {
+      font-size: 1.4rem;
+      color: inherit;
+      p {
+        margin-bottom: 4px;
+        &:last-child {
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+}
