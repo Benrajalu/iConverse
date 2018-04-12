@@ -64,7 +64,7 @@
       &.active {
         transform: translateX(0%) translateY(-50%) scale(1);
         z-index: 3;
-        animation: 300ms 1 alternate flip;
+        animation: 400ms 1 alternate flip;
       }
     }
   }
