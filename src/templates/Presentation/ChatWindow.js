@@ -32,7 +32,7 @@ class ChatWindow extends Component {
           <p>{this.props.user}</p>
         </div>
         <div className="window_content">
-          <ChatLog log={this.props.log} user={this.props.user} />
+          <ChatLog user={this.props.user} />
           <ChatInput
             user={this.props.user}
             handleSubmit={this.props.handleSubmit}
@@ -48,7 +48,6 @@ class ChatWindow extends Component {
 ChatWindow.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   handleType: PropTypes.func.isRequired,
-  log: PropTypes.array.isRequired,
   user: PropTypes.string.isRequired,
   activity: PropTypes.array.isRequired
 };

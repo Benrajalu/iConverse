@@ -4,6 +4,8 @@ import WindowSwitcher from '../Presentation/WindowSwitcher';
 
 import moment from 'moment';
 
+import LogContext from '../../Context';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -98,26 +100,27 @@ class App extends Component {
   render() {
     const users = ['Jacob Peralta', 'Amy Santiago'];
     return (
-      <div id="windows-wrap">
-        <WindowSwitcher
-          users={users}
-          handleActiveWindow={this.handleActiveWindow}
-          active={this.state.activeWindow}
-        />
-
-        {users.map((user, index) => (
-          <ChatWindow
-            key={`window-${index}`}
-            handleSubmit={this.handleSubmit}
-            handleType={this.handleType}
-            log={this.state.chatLog}
-            user={user}
-            activity={this.state.activity}
-            isActive={index === this.state.activeWindow}
-            index={index}
+      <LogContext.Provider value={this.state.chatLog}>
+        <div id="windows-wrap">
+          <WindowSwitcher
+            users={users}
+            handleActiveWindow={this.handleActiveWindow}
+            active={this.state.activeWindow}
           />
-        ))}
-      </div>
+
+          {users.map((user, index) => (
+            <ChatWindow
+              key={`window-${index}`}
+              handleSubmit={this.handleSubmit}
+              handleType={this.handleType}
+              user={user}
+              activity={this.state.activity}
+              isActive={index === this.state.activeWindow}
+              index={index}
+            />
+          ))}
+        </div>
+      </LogContext.Provider>
     );
   }
 }
