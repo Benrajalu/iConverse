@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import ChatLog from '../Containers/ChatLog';
 import ChatInput from '../Containers/ChatInput';
 
+import LogContext from '../../Context';
+
 class ChatWindow extends Component {
   constructor(props) {
     super(props);
@@ -32,7 +34,9 @@ class ChatWindow extends Component {
           <p>{this.props.user}</p>
         </div>
         <div className="window_content">
-          <ChatLog user={this.props.user} />
+          <LogContext.Consumer>
+            {log => <ChatLog user={this.props.user} log={log} />}
+          </LogContext.Consumer>
           <ChatInput
             user={this.props.user}
             handleSubmit={this.props.handleSubmit}
