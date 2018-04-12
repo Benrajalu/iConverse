@@ -115,7 +115,7 @@
   }
 
   &.error {
-    button {
+    button:not([type='button']) {
       color: #c1242e;
       animation: 200ms errorShake infinite alternate;
     }
