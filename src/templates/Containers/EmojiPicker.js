@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class EmojiPicker extends Component {
   constructor(props) {
@@ -37,8 +38,9 @@ class EmojiPicker extends Component {
     }, 300);
   }
 
-  handleSmileyClick() {
+  handleSmileyClick(emoji) {
     this.togglePanel();
+    this.props.appendEmoji(emoji);
   }
 
   render() {
@@ -142,7 +144,7 @@ class EmojiPicker extends Component {
           type="button"
           onClick={this.togglePanel}>
           <span role="img" aria-label="emoji">
-            😊
+            {this.state.panel ? '😄' : '😊'}
           </span>
         </button>
 
@@ -154,7 +156,7 @@ class EmojiPicker extends Component {
             <button
               type="button"
               key={`smiley-${index}`}
-              onClick={this.handleSmileyClick}>
+              onClick={this.handleSmileyClick.bind(this, smiley)}>
               <span role="img" aria-label="emoji">
                 {smiley}
               </span>
@@ -165,5 +167,9 @@ class EmojiPicker extends Component {
     );
   }
 }
+
+EmojiPicker.propTypes = {
+  appendEmoji: PropTypes.func.isRequired
+};
 
 export default EmojiPicker;

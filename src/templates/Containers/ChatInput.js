@@ -11,6 +11,7 @@ class ChatInput extends Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.appendEmoji = this.appendEmoji.bind(this);
   }
 
   handleSubmit(event) {
@@ -66,6 +67,18 @@ class ChatInput extends Component {
     );
   }
 
+  appendEmoji(emoji) {
+    let currentValue = this.state.value;
+    this.setState(
+      {
+        value: `${currentValue} ${emoji}`
+      },
+      () => {
+        this.input.focus();
+      }
+    );
+  }
+
   render() {
     // Checking activity prop for values that are not equal to the current user
     // then using this to display or hide the activity message
@@ -96,7 +109,7 @@ class ChatInput extends Component {
               </p>
             ) : null}
           </div>
-          <EmojiPicker />
+          <EmojiPicker appendEmoji={this.appendEmoji} />
         </div>
       </form>
     );
