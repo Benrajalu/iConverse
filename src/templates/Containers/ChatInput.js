@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import EmojiPicker from './EmojiPicker';
+
 class ChatInput extends Component {
   constructor(props) {
     super(props);
@@ -83,15 +85,18 @@ class ChatInput extends Component {
           placeholder="Envoyez un message..."
         />
         <button type="submit">Envoyer</button>
-        <div className="activity">
-          {currentlyActive.length > 0 ? (
-            <p>
-              {currentlyActive.length > 1
-                ? 'Plusieurs utilisateurs sont'
-                : currentlyActive.map(name => `${name} est`)}{' '}
-              en train d'écrire...
-            </p>
-          ) : null}
+        <div className="tools">
+          <div className="activity">
+            {currentlyActive.length > 0 ? (
+              <p>
+                {currentlyActive.length > 1
+                  ? 'Plusieurs utilisateurs sont'
+                  : currentlyActive.map(name => `${name} est`)}{' '}
+                en train d'écrire...
+              </p>
+            ) : null}
+          </div>
+          <EmojiPicker />
         </div>
       </form>
     );

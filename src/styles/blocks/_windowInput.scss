@@ -4,14 +4,13 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0px 8px;
-  min-height: 50px;
+  min-height: 55px;
   background: #f2f1ed;
   input {
     flex-grow: 2;
     border: 0px;
-    line-height: 32px;
-    padding: 0px;
+    line-height: 28px;
+    padding: 0px 8px;
     background: transparent;
     @include gotham(1.2rem, normal, $black);
     transition: all 200ms ease-out;
@@ -32,17 +31,87 @@
     border: 0px;
     line-height: 32px;
     padding-left: 10px;
-    padding-right: 0px;
+    padding-right: 8px;
     @include gotham(1.1rem, bold, $blue);
     text-transform: uppercase;
     &:focus {
       outline: 0;
     }
   }
-  .activity {
+  .tools {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    min-height: 18px;
-    @include gotham(1rem, normal, $black);
+    height: 20px;
+    border-top: 1px solid #ecebe7;
+    .activity {
+      flex-grow: 2;
+      @include gotham(1rem, normal, $black);
+      padding: 0px 8px;
+    }
+    .emojiPicker {
+      .trigger {
+        padding: 5px 8px;
+        height: 20px;
+        width: auto;
+        line-height: 1;
+        text-align: center;
+        font-size: 12px;
+        border: 0px;
+        background: transparent;
+        transition: all 200ms ease-out;
+        position: relative;
+        z-index: 3;
+        &.active {
+          background: #532bec;
+        }
+      }
+      .panel {
+        position: absolute;
+        background: linear-gradient(150deg, #7389ec 60%, #532bec 100%);
+        border-radius: 0px 10px 0px 10px;
+        padding: 10px;
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 0%;
+        height: 0%;
+        bottom: 0px;
+        right: 0px;
+        overflow: hidden;
+        transition: all 300ms cubic-bezier(0.85, -0.17, 0.08, 1.35);
+        display: none;
+        opacity: 0;
+        z-index: 2;
+        button {
+          flex-grow: 1;
+          font-size: 20px;
+          text-align: center;
+          padding: 5px;
+          line-height: 1;
+        }
+        &.visible {
+          display: flex;
+          right: 0px;
+          bottom: 20px;
+          height: 80%;
+          width: 80%;
+        }
+        &.beginning {
+          opacity: 0;
+          transform: translateY(100%);
+        }
+        &.completed {
+          transform: translateY(-0%);
+          opacity: 1;
+          overflow: auto;
+        }
+      }
+    }
   }
 
   &.error {
